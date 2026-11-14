@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prêmios | Cartão Nossa Família</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body style="background: #f8fafc;">
+
+    <!-- CABEÇALHO -->
+    <header class="header" style="background: #ffffff;">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Logo CNF">
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../index.html#o-que-e" class="nav-link">O Cartão</a>
+                <a href="../index.html#como-funciona" class="nav-link">Como Funciona</a>
+                <a href="beneficios.html" class="nav-link">Benefícios</a>
+                <a href="LINK_DA_FATURA" class="btn-outline">Fatura</a>
+                <a href="../portal/index.html" class="btn-outline">Área do Associado</a>
+                <a href="../index.html#planos" class="btn-primary">Escolher Plano</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main class="page-premios-light">
+        
+        <!-- CARROSSEL DE BANNERS (HERO) -->
+        <section class="banner-carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="slide">
+                    <img src="../assets/images/banner-premio-1.jpg" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="../assets/images/banner-premio-2.jpg" alt="Banner 2">
+                </div>
+                <div class="slide">
+                    <img src="../assets/images/banner-premio-3.jpg" alt="Banner 3">
+                </div>
+                <div class="slide">
+                    <img src="../assets/images/banner-premio-4.jpg" alt="Banner 4">
+                </div>
+            </div>
+
+            <!-- Controles do Carrossel -->
+            <button class="carousel-btn btn-prev" onclick="moveSlide(-1)"><i class="ph ph-caret-left"></i></button>
+            <button class="carousel-btn btn-next" onclick="moveSlide(1)"><i class="ph ph-caret-right"></i></button>
+            
+            <div class="carousel-dots" id="carouselDots">
+                <div class="dot active" onclick="goToSlide(0)"></div>
+                <div class="dot" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+                <div class="dot" onclick="goToSlide(3)"></div>
+            </div>
+        </section>
+
+        <!-- ESPAÇO RESERVADO PARA O NATAL 2026 (Vamos criar a seguir) -->
+        <div id="bloco-natal-2026">
+            <!-- A estrutura do Natal de 2026 entrará aqui -->
+        </div>
+
+        <!-- BLOCO: GRADE DE PRÊMIOS 2027 (ASSOCIADOS) -->
+        <section class="premios-secao-light" style="padding-top: 60px;">
+            <div class="light-container">
+                
+                <!-- Cabeçalho 2027 -->
+                <div class="light-header" style="justify-content: center; text-align: center; flex-direction: column; align-items: center; border: none; padding-bottom: 0;">
+                    <h1 style="font-size: 2.2rem; color: #0f172a; margin-bottom: 16px; font-weight: 800;">Em 2027, tem mais motivos para comemorar!</h1>
+                    <p style="color: #475569; font-size: 1.1rem; max-width: 700px; line-height: 1.6;">Um novo ano, novas oportunidades e muitas surpresas! Preparamos uma programação especial de campanhas e premiações para nossos associados. Acompanhe as novidades e fique por dentro das próximas ações.</p>
+                </div>
+
+                <!-- Grade de Prêmios -->
+                <div class="prizes-grid-light" style="margin-top: 40px;">
+                    
+                    <div class="circuit-step-light">
+                        <span class="step-badge-light">Março / 2027</span>
+                        <h3>Sorteio de Páscoa</h3>
+                        <p>Cestas exclusivas e vouchers em parceiros locais.</p>
+                        <img src="../assets/images/premio-2027-1.png" alt="Prêmio Março" class="circuit-img">
+                    </div>
+                    
+                    <div class="circuit-step-light">
+                        <span class="step-badge-light">Junho / 2027</span>
+                        <h3>Mês dos Namorados</h3>
+                        <p>Jantares românticos e finais de semana em hotéis credenciados.</p>
+                        <img src="../assets/images/premio-2027-2.png" alt="Prêmio Junho" class="circuit-img">
+                    </div>
+                    
+                    <div class="circuit-step-light">
+                        <span class="step-badge-light">Outubro / 2027</span>
+                        <h3>Especial Crianças</h3>
+                        <p>Brinquedos, ingressos para parques e muita diversão em família.</p>
+                        <img src="../assets/images/premio-2027-3.png" alt="Prêmio Outubro" class="circuit-img">
+                    </div>
+                    
+                    <div class="circuit-step-light step-grand-light" style="position: relative; margin-top: 14px;">
+                        <div class="prize-crown-light"><i class="ph ph-crown"></i> O Melhor do Ano</div>
+                        <span class="step-badge-light">Dezembro / 2027</span>
+                        <h3>O Grande Sorteio</h3>
+                        <p>O prêmio mais valioso do ano reservado exclusivamente para nossos associados ativos.</p>
+                        <img src="../assets/images/premio-2027-4.png" alt="Prêmio Dezembro" class="circuit-img">
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid #e2e8f0;">
+                    <h3 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 12px; font-weight: 800;">Não fique de fora das novidades!</h3>
+                    <p style="color: #475569; margin-bottom: 24px; font-size: 1.05rem;">Continue com seu Cartão Nossa Família ativo e acompanhe nossas próximas campanhas.</p>
+                    <a href="../index.html" class="btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1.05rem; border-radius: 8px;">Conheça o Cartão Nossa Família</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script do Carrossel -->
+    <script>
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = 4;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

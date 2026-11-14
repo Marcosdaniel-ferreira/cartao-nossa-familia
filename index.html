@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Cartão Nossa Família | Clube de Benefícios em Saúde e Economia
+    </title>
+
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=2" />
+    <a href="/natal" class="nav-link" style="color: #630b0b; font-weight: bold"
+      >Especial de Natal</a
+    >
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-container">
+        <!-- Logo -->
+        <a href="/natal" class="logo">
+          <img src="./assets/images/logo.png" alt="Logo Cartão Nossa Família" />
+        </a>
+
+        <!-- Menu de Navegação -->
+        <nav class="nav-menu" id="nav-menu">
+          <!-- Links de Seção -->
+          <a href="#o-que-e" class="nav-link">O Cartão</a>
+          <a href="#como-funciona" class="nav-link">Como Funciona</a>
+          <a href="#beneficios" class="nav-link">Benefícios</a>
+
+          <!-- Novos Botões de Acesso (Secundários) -->
+          <a
+            href="https://cartaonossafamilia.tenex.com.br/area-cliente/login/"
+            class="btn-outline"
+            >Minhas Faturas</a
+          >
+          <a href="/catalogo/catalogo.html" class="btn-outline"
+            >Área do Associado</a
+          >
+
+          <!-- Botão Principal de Venda -->
+          <a href="#planos" class="btn-primary">Escolher Plano</a>
+        </nav>
+
+        <!-- Botão Mobile (Hambúrguer) -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+      </div>
+    </header>
+
+    <!-- SECÇÃO HERO PRINCIPAL -->
+    <section class="hero-oficial">
+      <!-- 1. Carrossel de Banners (Largo e mais curto) -->
+      <div class="hero-carousel">
+        <div class="carousel-track">
+          <!-- Banner 1 -->
+          <div class="slide">
+            <a
+              href="/natal/"
+              target="_blank"
+              rel="noopener"
+              style="display: block"
+            >
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="assets/images/banner-mobile-1.jpg"
+                />
+                <img
+                  src="assets/images/banner-desktop-1.jpg"
+                  alt="Especial de Natal - Ação Premiada"
+                />
+              </picture>
+            </a>
+          </div>
+          <!-- Banner 2 -->
+          <div class="slide">
+    <a href="/natal/" target="_blank" rel="noopener" style="display: block;">
+        <picture>
+            <source media="(max-width: 768px)" srcset="assets/images/banner-mobile-1.jpg">
+            <img src="assets/images/banner-desktop-1.jpg" alt="Especial de Natal - Ação Premiada">
+        </picture>
+    </a>
+</div>
+
+        <!-- Controlos do Carrossel -->
+        <button class="carousel-btn btn-prev">
+          <i class="ph ph-caret-left"></i>
+        </button>
+        <button class="carousel-btn btn-next">
+          <i class="ph ph-caret-right"></i>
+        </button>
+
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <!-- 2. Cards de Acesso Rápido (Sobrepondo o banner) -->
+      <div class="hero-quick-cards">
+        <div class="container quick-cards-grid">
+          <a href="paginas/beneficios.html#saude" class="quick-card">
+            <div class="quick-card-icon icon-consultas">
+              <i class="ph ph-stethoscope"></i>
+            </div>
+            <div class="quick-card-content">
+              <h3>Saúde</h3>
+              <p>Consultas e exames com valores reduzidos.</p>
+            </div>
+          </a>
+
+          <a href="#clinicas" class="quick-card">
+            <div class="quick-card-icon icon-clinicas">
+              <i class="ph ph-first-aid"></i>
+            </div>
+            <div class="quick-card-content">
+              <h3>Clínicas</h3>
+              <p>Encontre a unidade mais próxima.</p>
+            </div>
+          </a>
+
+          <a href="paginas/beneficios.html#parceiros" class="quick-card">
+            <div class="quick-card-icon icon-parceiros">
+              <i class="ph ph-shopping-bag"></i>
+            </div>
+            <div class="quick-card-content">
+              <h3>Parceiros</h3>
+              <p>Descontos no comércio local.</p>
+            </div>
+          </a>
+
+          <a href="/portal/" class="quick-card highlight-card">
+            <div class="quick-card-icon icon-app">
+              <i class="ph ph-device-mobile"></i>
+            </div>
+            <div class="quick-card-content">
+              <h3>Área do Associado</h3>
+              <p>Acesse sua carteirinha digital.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER DE NOTÍCIAS DESLIZANTE (SLIDE) -->
+    <div class="news-banner">
+      <div class="news-track">
+        <!-- Itens do Banner -->
+        <div class="news-item">
+          >> <strong>Novidade:</strong> Pagamento Anual com Desconto Exclusivo!
+        </div>
+        <div class="news-item">
+          >> Mais de 10 médicos especialistas disponíveis na rede.
+        </div>
+        <div class="news-item">
+          >> Acesse nosso App e acompanhe sua economia em tempo real!
+        </div>
+        <div class="news-item">
+          >> Clube de benefícios com descontos em grandes Marcas .
+        </div>
+
+        <!-- Itens duplicados para criar o efeito de slide infinito sem quebras -->
+        <div class="news-item">
+          >> <strong>Novidade:</strong> Pagamento Anual com Desconto Exclusivo!
+        </div>
+        <div class="news-item">
+          >> Mais de 10 médicos especialistas disponíveis na rede.
+        </div>
+        <div class="news-item">
+          >> Acesse nosso App e acompanhe sua economia em tempo real!
+        </div>
+        <div class="news-item">
+          >> Clube de benefícios com descontos em grandes Marcas .
+        </div>
+      </div>
+    </div>
+
+    <!-- 02. O QUE É O CARTÃO -->
+    <section id="o-que-e" class="section-light">
+      <div class="container" data-aos="fade-up">
+        <div class="content-center max-800">
+          <h2>Afinal, o que é o Cartão Nossa Família?</h2>
+          <p class="lead-text">
+            O Cartão Nossa Família foi criado para uma coisa simples:
+            <strong>fazer você gastar menos para cuidar da sua saúde.</strong>
+          </p>
+          <p>
+            Você paga uma assinatura e passa a ter acesso a uma série de
+            benefícios, descontos e condições especiais em consultas, exames,
+            procedimentos e serviços parceiros.
+          </p>
+
+          <div class="alert-box mb-30">
+            <strong>Não funciona como um plano de saúde.</strong> Você não paga
+            para ter consultas "cobertas". Você paga para ter acesso a valores e
+            benefícios exclusivos quando utilizar os serviços disponíveis.
+          </div>
+
+          <h3 class="highlight-text mb-30">
+            É saúde mais acessível. É economia que você consegue enxergar.
+          </h3>
+          <a href="#planos" class="btn-primary"
+            >Quero Conhecer as Modalidades</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. O PROBLEMA QUE RESOLVE (DARK MODE) -->
+    <section class="section-dark">
+      <div class="container" data-aos="fade-up">
+        <div class="content-center max-800">
+          <h2>
+            Você não precisa esperar ficar doente para descobrir que cuidar da
+            saúde ficou caro.
+          </h2>
+          <p>
+            Uma consulta particular pode custar R$400, R$500 ou mais. Um exame
+            que você precisa fazer pode acabar sendo adiado porque não estava no
+            orçamento. E aquele acompanhamento que deveria acontecer agora fica
+            para depois.
+          </p>
+          <p>
+            Não porque você não queira se cuidar.
+            <strong class="text-white"
+              >Porque, muitas vezes, o preço pesa.</strong
+            >
+          </p>
+          <!-- <p>Foi pensando nisso que o Cartão Nossa Família nasceu. Para colocar mais possibilidades de cuidado dentro do orçamento.</p> -->
+
+          <div class="big-quote dark-quote my-40">
+            "Menos dinheiro indo embora.<br />Mais possibilidades de cuidar da
+            saúde."
+          </div>
+          <a href="#planos" class="btn-light">Quero Economizar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. COMO FUNCIONA -->
+    <section id="como-funciona" class="section-white">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>É mais simples do que parece.</h2>
+        </div>
+        <div class="passos-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="passo-card">
+            <div class="passo-icon">01</div>
+            <h3>Escolha seu cartão</h3>
+            <p>
+              Escolha a modalidade que faz mais sentido para você, sua família
+              ou sua empresa.
+            </p>
+          </div>
+          <div class="passo-card">
+            <div class="passo-icon">02</div>
+            <h3>Acesso aos benefícios</h3>
+            <p>
+              Depois da adesão, você passa a ter acesso aos benefícios e
+              condições previstas na sua modalidade.
+            </p>
+          </div>
+          <div class="passo-card">
+            <div class="passo-icon">03</div>
+            <h3>Use quando precisar</h3>
+            <p>
+              Escolha o médico, exame ou parceiro disponível e aproveite a
+              condição especial do seu cartão.
+            </p>
+          </div>
+        </div>
+        <div class="content-center mt-40" data-aos="fade-up">
+          <p class="lead-text">
+            <strong>E tem uma diferença importante:</strong> você não precisa
+            esperar uma emergência para fazer o cartão valer a pena.
+          </p>
+          <p>
+            Use para uma consulta, um exame, uma compra no Clube de Benefícios
+            ou outro serviço disponível.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. MÉDICOS DISPONÍVEIS -->
+    <section class="section-light">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Tem médico para quando você precisar.</h2>
+          <p>
+            O Cartão Nossa Família dá acesso a uma rede de profissionais e
+            serviços, com mais de 15 médicos disponíveis no catálogo.
+          </p>
+        </div>
+
+        <div class="cards-grid" data-aos="fade-up">
+          <div class="info-card">
+            <h4>Clínica Geral</h4>
+            <p>
+              Para aquela consulta que você vem adiando ou para começar uma
+              investigação.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Ginecologia</h4>
+            <p>Acompanhamento e cuidados com a saúde da mulher.</p>
+          </div>
+          <div class="info-card">
+            <h4>Endocrinologia</h4>
+            <p>
+              Avaliação relacionada a metabolismo, hormônios e outras condições.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Urologia</h4>
+            <p>Cuidados com a saúde masculina e do sistema urinário.</p>
+          </div>
+          <div class="info-card">
+            <h4>Psiquiatria</h4>
+            <p>Acompanhamento especializado em saúde mental.</p>
+          </div>
+          <div class="info-card">
+            <h4>Ortopedia</h4>
+            <p>
+              Avaliação de dores, lesões e problemas do sistema
+              musculoesquelético.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-center mt-40" data-aos="fade-up">
+          <p class="nota-rodape mb-30">
+            Também fazem parte do catálogo profissionais e serviços em outras
+            áreas da saúde. Consulte a disponibilidade atualizada antes do
+            agendamento.
+          </p>
+          <a href="https://cnf-clube-vantagens.base44.app/" class="btn-outline"
+            >Ver Catálogo Completo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. BENEFÍCIOS -->
+    <section id="beneficios" class="section-white">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>O cartão vai muito além da consulta.</h2>
+          <p>
+            Você entra por causa da economia em saúde. Mas quando conhece tudo o
+            que está disponível, percebe que o cartão entrega muito mais.
+          </p>
+        </div>
+
+        <div class="cards-grid benef-grid" data-aos="fade-up">
+          <div class="info-card">
+            <h4>1. Clínica Geral</h4>
+            <p>
+              Acesso a consulta com Clínico Geral, conforme as condições da
+              modalidade.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>2. Até 60% de desconto</h4>
+            <p>
+              Condições diferenciadas em consultas médicas disponíveis no
+              catálogo.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>3. Exames</h4>
+            <p>
+              Economize também na realização de exames laboratoriais e outros
+              serviços.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>4. Agendamento preferencial</h4>
+            <p>
+              Conte com condições diferenciadas de atendimento e agendamento.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>5. Rede de parceiros</h4>
+            <p>
+              Benefícios em estabelecimentos parceiros locais, como
+              Laboratórios, SPA e academia.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>6. Clube de Benefícios</h4>
+            <p>
+              Economize em redes como Magalu, Riachuelo, Amazon, Netshoes e
+              Pague Menos.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>7. Assistência Funeral</h4>
+            <p>
+              Assistência funeral individual de até R$ 7.000, conforme a
+              modalidade.
+            </p>
+          </div>
+          <div class="info-card highlight-card">
+            <h4>8. App de Economia</h4>
+            <p>Veja na prática quanto você economiza utilizando o cartão.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. O DIFERENCIAL (APP VIBRANTE) -->
+    <section class="section-gradient app-economia">
+      <div class="container flex-container">
+        <div class="flex-text text-white" data-aos="fade-right">
+          <h2 class="text-white">
+            Desconto é bom. Saber quanto você economizou é melhor.
+          </h2>
+          <!-- <p class="text-white opacity-80">Você já comprou alguma coisa em promoção e depois ficou pensando: "Será que eu realmente economizei?"</p> -->
+          <p class="text-white opacity-80">
+            Com o Cartão Nossa Família, você não precisa ficar no achismo. Nosso
+            aplicativo mostra a diferença entre o valor normal e o valor que
+            você conseguiu.
+          </p>
+
+          <!-- <h3 class="mb-30 text-white">Sua economia deixa de ser promessa e vira número.</h3> -->
+
+          <ul class="lista-simples lista-white mb-30">
+            <li>✔️ Quanto economizou</li>
+            <li>✔️ Quanto seria o valor sem o benefício</li>
+            <li>✔️ O percentual de economia</li>
+            <li>✔️ Sua utilização dos benefícios</li>
+          </ul>
+          <a href="#planos" class="btn-light">Quero Começar a Economizar</a>
+        </div>
+        <div class="flex-image" data-aos="fade-left">
+          <img
+            src="./assets/images/app-mockup.png"
+            alt="Aplicativo mostrando a economia"
+            class="floating-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. NÃO FIQUE NA GAVETA -->
+    <section class="section-light">
+      <div class="container" data-aos="fade-up">
+        <div class="content-center max-800">
+          <h2>O melhor cartão é aquele que você realmente usa.</h2>
+          <p>
+            Não faz sentido assinar um cartão de benefícios e lembrar dele
+            somente quando alguma coisa dá errado. O Cartão Nossa Família foi
+            pensado para fazer parte da sua rotina.
+          </p>
+          <p>
+            Uma consulta que você estava adiando. Um exame que precisa ser
+            feito. Uma compra em parceiro. Quanto mais você conhece, mais
+            possibilidades encontra para economizar.
+          </p>
+
+          <div class="big-quote my-40">
+            "Não espere precisar. Conheça o que você já tem."
+          </div>
+          <a href="#beneficios" class="btn-primary"
+            >Quero Ver Meus Benefícios</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. UNIDADE MÉDICA CNF -->
+    <section class="section-white">
+      <div class="container flex-container flex-reverse">
+        <div class="flex-text" data-aos="fade-left">
+          <h2>E onde tudo isso acontece?</h2>
+          <p>
+            O Cartão Nossa Família nasceu conectado a uma estrutura de saúde que
+            já atende a nossa região.
+          </p>
+          <p>
+            A <strong>Clínica Nossa Família</strong> oferece um espaço completo
+            para consultas, exames e diferentes serviços de saúde. É uma das
+            principais estruturas onde o associado pode utilizar seus
+            benefícios.
+          </p>
+
+          <!-- <div class="tags-container my-30">
+                    <span class="tag">Consultas médicas</span>
+                    <span class="tag">Exames</span>
+                    <span class="tag">Endoscopia</span>
+                    <span class="tag">Colonoscopia</span>
+                    <span class="tag">Radiologia</span>
+                    <span class="tag">Pediatria</span>
+                    <span class="tag">Odontologia</span>
+                    <span class="tag">Nutrição</span>
+                    <span class="tag">Psicologia</span>
+                    <span class="tag">Psiquiatria</span>
+                </div> -->
+          <p class="highlight-text mb-30">
+            Uma estrutura de saúde próxima de você, com um cartão pensado para
+            tornar esse acesso mais simples e econômico.
+          </p>
+          <a href="clinica.html" class="btn-outline">Conheça a Clínica</a>
+        </div>
+        <div class="flex-image" data-aos="fade-right">
+          <img
+            src="./assets/images/clinica-img.png"
+            alt="Clínica Nossa Família"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. NÃO É PLANO (ALERTA) -->
+    <!-- <section class="section-dark">
+        <div class="container content-center max-800" data-aos="zoom-in">
+            <h2>Não é plano de saúde. E essa diferença importa.</h2>
+            <p>O Cartão Nossa Família funciona de uma forma diferente. Você paga uma assinatura para ter acesso a benefícios, descontos e condições especiais em consultas, exames, serviços e parceiros.</p>
+            <p>Não existe promessa de cobertura integral de despesas médicas. Você utiliza os serviços disponíveis e paga o valor correspondente à condição oferecida pelo cartão.</p>
+            <div class="highlight-text mt-30 text-white opacity-80" style="font-size: 1.8rem;">
+                Mais simples. Mais acessível. Sem a estrutura de um plano de saúde tradicional.
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 11. PREÇOS E PLANOS -->
+    <section id="planos" class="section-light planos">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Quanto custa ter acesso a tudo isso?</h2>
+          <p>Menos do que você provavelmente imagina.</p>
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="toggle-container" data-aos="fade-up">
+          <span class="toggle-label">Mensal</span>
+          <label class="switch">
+            <input type="checkbox" id="pricing-toggle" />
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label destaque"
+            >Clique na chave para ver o (plano Anual)</span
+          >
+        </div>
+
+        <div class="planos-grid">
+          <!-- INDIVIDUAL -->
+          <div class="plano-card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Individual</h3>
+            <p class="sub-plano">
+              Para quem quer cuidar da própria saúde e ter acesso aos
+              benefícios.
+            </p>
+            <div class="preco-box">
+              <div class="tag-economia">Economize R$ 29,88</div>
+              <span class="moeda">R$</span>
+              <!-- VALOR ATUALIZADO AQUI: 293,82 -->
+              <span class="valor" data-mensal="24,90" data-anual="293,82"
+                >24,90</span
+              >
+              <span
+                class="periodo"
+                data-periodo-mensal="/mês"
+                data-periodo-anual="/ano"
+                >/mês</span
+              >
+            </div>
+            <p class="nota-rodape mb-30">
+              12 mensalidades + taxa de adesão com carência de 30 dias para
+              consultas e exames
+            </p>
+            <a href="#" class="btn-primary btn-plano" id="btn-individual"
+              >Quero o Individual</a
+            >
+          </div>
+
+          <!-- FAMILIAR -->
+          <div
+            class="plano-card destaque"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="tag-economia">Economize R$ 51,80</div>
+            <div class="tag-recomendado">Mais Escolhido</div>
+            <h3>Familiar</h3>
+            <p class="sub-plano">
+              Ideal para família com cônjuge e filhos, modalidade [1 titular e 3
+              dependentes].
+            </p>
+            <div class="preco-box">
+              <span class="moeda">R$</span>
+              <!-- VALOR ATUALIZADO AQUI: 505,90 -->
+              <span class="valor" data-mensal="42,90" data-anual="505,90"
+                >42,90</span
+              >
+              <span
+                class="periodo"
+                data-periodo-mensal="/mês"
+                data-periodo-anual="/ano"
+                >/mês</span
+              >
+            </div>
+            <p class="nota-rodape mb-30">
+              12 mensalidades + taxa de adesão com carência de 30 dias para
+              consultas e exames
+            </p>
+            <a href="#" class="btn-primary btn-plano" id="btn-familiar"
+              >Quero o Familiar</a
+            >
+          </div>
+
+          <!-- COMPARTILHADO -->
+          <div class="plano-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="tag-economia">Economize R$ 32,90</div>
+            <h3>Compartilhado</h3>
+            <p class="sub-plano">
+              Ideal para amigos, familiares ou colegas, modalidade [1 titular e
+              3 dependentes]. <br />
+              Adicione mais por: R$ 9,90
+            </p>
+            <div class="preco-box">
+              <span class="moeda">R$</span>
+              <!-- VALOR ATUALIZADO AQUI: 352,80 -->
+              <span class="valor" data-mensal="29,90" data-anual="352,80"
+                >29,90</span
+              >
+              <span
+                class="periodo"
+                data-periodo-mensal="/mês"
+                data-periodo-anual="/ano"
+                >/mês</span
+              >
+            </div>
+            <p class="nota-rodape mb-30">
+              12 mensalidades + taxa de adesão com carência de 30 dias para
+              consultas e exames
+            </p>
+            <a href="#" class="btn-primary btn-plano" id="btn-compartilhado"
+              >Quero o Compartilhado</a
+            >
+          </div>
+        </div>
+
+        <div class="content-center mt-40" data-aos="fade-up">
+          <p class="nota-rodape mb-30">
+            Todos os planos possuem taxa de adesão equivalente a uma
+            mensalidade. Consulte as condições, benefícios, carências e regras
+            de cada modalidade antes da contratação.
+          </p>
+          <a
+            href="https://wa.me/553599840544"
+            class="btn-primary large mt-20"
+            target="_blank"
+            >Dúvidas, fale com nosso consultor.</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. COMPARAÇÃO DE VALOR -->
+    <!-- <section class="section-white">
+        <div class="container content-center max-800" data-aos="fade-up">
+            <h2>Agora faça a conta.</h2>
+            <p>Imagine precisar de uma consulta particular. Você pode pagar o valor cheio. Ou pode ter acesso a uma condição diferenciada utilizando seu Cartão Nossa Família.</p>
+            <p>Agora imagine fazer isso também em exames, parceiros e outros serviços ao longo do ano.</p>
+            <div class="big-quote my-40 highlight-text">
+                O valor do cartão está no que você consegue economizar usando ele.
+            </div>
+            <a href="#planos" class="btn-primary">Fazer Minha Adesão</a>
+        </div>
+    </section> -->
+
+    <!-- 13. FAQ -->
+    <section class="section-light faq-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Ficou com alguma dúvida?</h2>
+        </div>
+        <div class="faq-container" data-aos="fade-up">
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              O Cartão Nossa Família é um plano de saúde? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Não. O Cartão Nossa Família é um clube de benefícios em saúde.
+                Ele oferece acesso a consultas, exames e serviços com condições
+                diferenciadas, conforme a modalidade e os parceiros disponíveis.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Posso usar o cartão imediatamente? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                A utilização depende do benefício. Exames possuem carência de 30
+                dias. Consulte as regras da modalidade contratada antes de
+                utilizar.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              O cartão cobre minha consulta? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Não. O cartão oferece benefícios e condições especiais. A
+                consulta é realizada pelo valor estabelecido para o associado,
+                conforme a condição disponível.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Preciso ter o cartão físico? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Não necessariamente. O cartão físico é opcional e não é enviado
+                automaticamente. Caso queira receber, é necessário solicitar.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Posso usar em qualquer médico? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Não. Os benefícios são válidos para os profissionais, serviços e
+                parceiros disponíveis no catálogo/rede do Cartão Nossa Família.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              O cartão dá desconto em exames? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Sim. O cartão oferece descontos em exames disponíveis na rede,
+                conforme as condições vigentes.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Tenho acesso ao Clube de Benefícios? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Sim. O Clube de Benefícios permite acessar vantagens em grandes
+                redes nacionais e outros parceiros participantes.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-pergunta">
+              Como vejo quanto economizei? <span>+</span>
+            </button>
+            <div class="faq-resposta">
+              <p>
+                Por meio do aplicativo de economia, onde o associado consegue
+                acompanhar a diferença de valores e sua economia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. CTA FINAL -->
+    <section class="section-gradient">
+      <div class="container content-center max-800" data-aos="zoom-in">
+        <h2 class="text-white">Você pode continuar pagando o preço cheio.</h2>
+        <p class="text-white opacity-80">
+          Ou pode começar a cuidar da sua saúde de uma forma mais inteligente. O
+          Cartão Nossa Família foi criado para colocar mais acesso e mais
+          economia na sua rotina.
+        </p>
+        <p class="text-white font-bold mt-20">
+          Conheça a modalidade que faz sentido para você.
+        </p>
+
+        <a href="https://wa.me/553599840544" class="btn-light large mt-30"
+          >Falar com consultor</a
+        >
+        <p class="microcopy mt-20 text-white opacity-80">
+          Atendimento pelo WhatsApp. Tire suas dúvidas antes de contratar.
+        </p>
+      </div>
+    </section>
+
+    <!-- 15. RODAPÉ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <img
+              src="./assets/images/logo.png"
+              alt="Logo"
+              class="footer-logo mb-20"
+            />
+            <!-- <p>Uma escolha inteligente para cuidar da saúde gastando menos.</p> -->
+            <p>Clube de benefícios em saúde.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <a href="#o-que-e">O Cartão</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#beneficios">Benefícios</a>
+            <a href="#medicos">Médicos</a>
+            <a href="#clube">Clube de Benefícios</a>
+            <a href="#planos">Planos</a>
+          </div>
+          <div class="footer-col">
+            <h4>Suporte</h4>
+            <a href="#">Central de Atendimento</a>
+            <a href="#">Dúvidas frequentes</a>
+            <p class="mt-20"><strong>Contato:</strong></p>
+            <p>Whatsapp: (35) 99984-0544</p>
+            <p>E-mail: contato@cartaonossafamilia.com.br</p>
+            <a
+              href="https://www.instagram.com/cartaonossafamilia/"
+              target="_blank"
+              >Instagram: @cartaonossafamilia</a
+            >
+          </div>
+          <div class="footer-col">
+            <h4>Institucional</h4>
+            <a href="#como-funciona">Sobre o Cartão Nossa Família</a>
+            <a href="termos.html">Termos de Uso</a>
+            <a href="privacidade.html">Política de Privacidade</a>
+            <!-- <a href="#">Regulamento</a> -->
+          </div>
+        </div>
+        <div class="footer-legal">
+          <!-- <p>O Cartão Nossa Família é um clube de benefícios em saúde e não se caracteriza como plano de saúde, seguro saúde ou convênio médico. Os benefícios, descontos, carências e condições de utilização estão sujeitos às regras de cada modalidade e aos parceiros participantes.</p> -->
+          <p>© 2026 Cartão de Benefícios • Sua saúde com economia</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js?v=2"></script>
+  </body>
+</html>

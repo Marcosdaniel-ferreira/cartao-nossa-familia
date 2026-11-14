@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade Médica CNF</title>
+    
+    <!-- CSS do SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+    <!-- Seu CSS Principal -->
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="tema-escuro">
+    <div class="clinica-modern-wrapper">
+        
+        <!-- Navegação Superior -->
+        <div class="clinica-nav">
+            <a href="index.html" class="btn-voltar">
+                <span class="icone-voltar">‹</span> Voltar ao site
+            </a>
+            <span class="badge-status">📍 Nepomuceno-MG</span>
+        </div>
+
+        <header class="clinica-header-modern">
+            <h1>Conheça a <span class="destaque-gradiente">Unidade CNF</span></h1>
+            <p>Sua saúde com estrutura de ponta e atendimento humanizado.</p>
+        </header>
+
+        <!-- Container do Slider (Glassmorphism Colorido) -->
+        <div class="slider-container-modern">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-01.webp" alt="Estrutura 1"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-02.webp" alt="Estrutura 2"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-03.webp" alt="Estrutura 3"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-04.webp" alt="Estrutura 4"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-05.webp" alt="Estrutura 5"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-06.webp" alt="Estrutura 6"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-07.webp" alt="Estrutura 7"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-08.webp" alt="Estrutura 8"></div>
+                    <div class="swiper-slide"><img src="../assets/images/clinica/img-09.webp" alt="Estrutura 9"></div>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- Setas de navegação (NOVAS) -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div> <!-- Fim da div .swiper -->
+        </div> <!-- Fim da div .slider-container-modern -->
+        <!-- Ação Principal -->
+        <div class="clinica-footer-action">
+            <a href="https://maps.app.goo.gl/uNTWw7ReD3yCAN3m9" target="_blank" class="btn-rota-modern">🗺️ Acessar Rota no Maps</a>
+        </div>
+
+    </div>
+
+    <!-- Script do SwiperJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Script Exclusivo da Clínica -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,
+                grabCursor: true,
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000, // Tempo de troca automática (3 segundos)
+                    disableOnInteraction: false,
+                }
+            });
+        });
+    </script>
+</body>
+</html>

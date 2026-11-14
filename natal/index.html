@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especial de Natal | Cartão Nossa Família</title>
+
+    <!-- 1. CSS Principal do Site (Mantém o cabeçalho e menu arrumados) -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- 2. CSS Exclusivo de Natal (Carrega o design verde e dourado) -->
+    <link rel="stylesheet" href="natal.css?v=3" />
+    <link
+      rel="icon"
+      href="../assets/images/favicon-especial-natal.png"
+      type="image/png"
+    />
+    <!-- Ícones -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body style="background: #e2e8f0">
+    <!-- Fundo escuro atrás para o efeito reveal do banner -->
+
+    <!-- CABEÇALHO -->
+    <header
+      class="header"
+      style="position: sticky; top: 0; z-index: 100; background: #084d44"
+    >
+      <div class="container header-container">
+        <a href="../index.html" class="logo"
+          ><img src="../assets/images/logo-branco.png" alt="Logo CNF"
+        /></a>
+        <nav class="nav-menu" id="nav-menu">
+          <!-- <a href="../index.html#o-que-e" class="nav-link">O Cartão</a> -->
+          <!-- <a href="../index.html#como-funciona" class="nav-link"
+            >Como Funciona</a
+          > -->
+          <!-- <a href="beneficios.html" class="nav-link">Benefícios</a> -->
+          <!-- <a
+            href="premios.html"
+            class="nav-link"
+            style="color: #b91c1c; font-weight: bold"
+            >Campanhas</a
+          > -->
+          <!-- <a href="LINK_DA_FATURA" class="btn-outline">Fatura</a>
+          <a href="../portal/index.html" class="btn-primary"
+            >Área do Associado</a
+          > -->
+        </nav>
+        <!-- Botão Principal de Venda -->
+        <a
+          href="/#planos"
+          class="btn-primary"
+          style="
+            background-color: #e6c594;
+            color: #053630;
+            border: none;
+            font-weight: 800;
+          "
+          >Escolher Plano</a
+        >
+        <!-- <button class="menu-toggle" id="menu-toggle">☰</button> -->
+      </div>
+    </header>
+
+    <!-- CARROSSEL DE BANNERS (FIXO NO FUNDO - EFEITO REVEAL) -->
+    <section
+      class="banner-carousel"
+      style="position: sticky; top: 60px; z-index: 1"
+    >
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Insira os banners 1920x1080 com tema natalino -->
+        <div class="slide">
+          <img src="../assets/images/banner-natal-1.jpg" alt="Natal CNF 1" />
+        </div>
+        <div class="slide">
+          <img src="../assets/images/banner-natal-2.jpg" alt="Natal CNF 2" />
+        </div>
+        <div class="slide">
+          <img src="../assets/images/banner-natal-3.jpg" alt="Natal CNF 3" />
+        </div>
+      </div>
+      <button class="carousel-btn btn-prev" onclick="moveSlide(-1)">
+        <i class="ph ph-caret-left"></i>
+      </button>
+      <button class="carousel-btn btn-next" onclick="moveSlide(1)">
+        <i class="ph ph-caret-right"></i>
+      </button>
+      <div class="carousel-dots" id="carouselDots">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL (DESLIZA POR CIMA DO BANNER) -->
+    <main class="page-natal">
+      <!-- Intro -->
+      <div class="natal-header">
+        <span class="natal-badge"
+          ><i class="ph ph-gift"></i> CARTÃO PREMIADO</span
+        >
+        <h1>Especial de Natal</h1>
+        <p>
+          Neste fim de ano, o Cartão Nossa Família preparou uma campanha
+          especial para os associados! Serão cinco datas de premiação com
+          produtos para deixar este período ainda mais inesquecível.
+        </p>
+      </div>
+
+      <!-- Grade de Prêmios (Imagens Quadradas) -->
+      <section class="natal-prizes">
+        <div class="natal-grid">
+          <div class="natal-card">
+            <div class="natal-date">Sorteio - 21/12</div>
+            <div class="natal-img-wrapper">
+              <img src="../assets/images/air.webp" alt="Air Fryer" />
+            </div>
+            <h3>Você pode ganhar um</h3>
+            <p>Air Fryer</p>
+          </div>
+
+          <div class="natal-card">
+            <div class="natal-date">Sorteio - 22/12</div>
+            <div class="natal-img-wrapper">
+              <img src="../assets/images/liqui.webp" alt="Liquidificador" />
+            </div>
+            <h3>Você pode ganhar um</h3>
+            <p>Liquidificador</p>
+          </div>
+
+          <div class="natal-card">
+            <div class="natal-date">Sorteio - 23/12</div>
+            <div class="natal-img-wrapper">
+              <img src="../assets/images/panela.webp" alt="Jogo de Panelas" />
+            </div>
+            <h3>Você pode ganhar um</h3>
+            <p>Jogo de Panelas</p>
+          </div>
+
+          <div class="natal-card">
+            <div class="natal-date">Sorteio - 25/12</div>
+            <div class="natal-img-wrapper">
+              <img
+                src="../assets/images/aspirador.webp"
+                alt="Aspirador de pó"
+              />
+            </div>
+            <h3>Você pode ganhar um</h3>
+            <p>Aspirador de pó</p>
+          </div>
+
+          <div class="natal-card natal-card-grand">
+            <div class="natal-date">
+              <i class="ph ph-star"></i> Sorteio - 30/12
+            </div>
+            <div class="natal-img-wrapper">
+              <img src="../assets/images/500.jpg" alt="Prêmio de R$ 500,00" />
+            </div>
+            <h3>Prêmio de R$ 500,00</h3>
+            <p style="font-size: 0.8rem; color: #475569">R$ 500,00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA INSTAGRAM E QUERO PARTICIPAR -->
+      <div class="botoes-finais-container">
+        <a
+          href="https://www.instagram.com/cartaonossafamilia/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(
+              45deg,
+              #f09433 0%,
+              #e6683c 25%,
+              #dc2743 50%,
+              #cc2366 75%,
+              #bc1888 100%
+            );
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 99px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(220, 39, 67, 0.35);
+            transition: transform 0.2s;
+          "
+        >
+          <i class="ph ph-instagram-logo" style="font-size: 1.5rem"></i>
+          Acompanhe no Instagram
+        </a>
+
+        <a href="/#planos" class="btn-participar">
+          <i class="ph ph-ticket"></i> Quero Participar
+        </a>
+      </div>
+
+      <!-- Regras Claras e Elegantes -->
+      <section class="natal-rules-section">
+        <div class="rules-box">
+          <h2>Como Funciona a Campanha?</h2>
+          <ul class="rules-list">
+            <li>
+              <strong>Quem participa:</strong> A campanha é exclusiva para
+              titulares do Cartão Nossa Família com cadastro ativo e
+              mensalidades em dia.
+            </li>
+            <li>
+              <strong>Participação automática:</strong> Os sorteios serão
+              realizados digitalmente pelo nosso sistema. Cada titular tem uma
+              oportunidade em cada data.
+            </li>
+            <li>
+              <strong>Regras de pagamento:</strong> A regularidade será
+              conferida às 18h do último dia útil anterior a cada sorteio. Não
+              possua mensalidades vencidas.
+            </li>
+            <li>
+              <strong>Transparência:</strong> Os resultados serão divulgados nos
+              canais oficiais e o contemplado será avisado diretamente.
+            </li>
+            <li>
+              <strong>Novos associados:</strong> Podem participar desde que a
+              contratação esteja concluída e ativa no momento da verificação.
+            </li>
+          </ul>
+          <p
+            style="
+              text-align: center;
+              margin-top: 30px;
+              font-weight: bold;
+              color: var(--natal-primary);
+            "
+          >
+            Cartão Nossa Família — Família cuidando de família.
+          </p>
+          <div style="text-align: center; margin-top: 30px">
+            <a href="/#planos" class="btn-participar">
+              <i class="ph ph-ticket"></i> Quero Participar
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Interativo para Mobile -->
+      <section class="faq-section">
+        <div class="faq-header">
+          <h2>Dúvidas Frequentes</h2>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Dependentes também participam dos sorteios?
+            <i class="ph ph-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Não. A participação é exclusiva do titular do contrato.
+              Dependentes vinculados ao cadastro não recebem participações
+              individuais para os sorteios.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Se eu ganhar um prêmio, continuo concorrendo?
+            <i class="ph ph-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sim! Quem for contemplado em uma data continuará participando das
+              demais premiações da campanha. A única restrição é não concorrer
+              novamente à exata mesma premiação já conquistada.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Fiz meu cartão hoje. Já estou concorrendo?
+            <i class="ph ph-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sim, novos associados participam automaticamente, desde que a
+              contratação esteja concluída e o pagamento confirmado até às 18h
+              do dia útil anterior ao sorteio.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Como saberei se fui o ganhador? <i class="ph ph-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Os ganhadores serão divulgados em nossas redes sociais oficiais.
+              Além disso, nossa equipe entrará em contato direto através do
+              WhatsApp ou telefone cadastrado. Mantenha seus dados atualizados!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGULAMENTO / TEXTO LEGAL DA CAMPANHA -->
+      <div
+        style="
+          text-align: center;
+          max-width: 850px;
+          margin: 0 auto;
+          padding: 20px 20px 40px;
+          border-top: 1px solid rgba(230, 197, 148, 0.2);
+        "
+      >
+        <p
+          style="font-size: 0.8rem; color: #94a3b8; line-height: 1.6; margin: 0"
+        >
+          Campanha válida de 13/11/2026 a 30/12/2026 para associados ativos do
+          Cartão Nossa Família. Prêmios não cumulativos e não conversíveis em
+          dinheiro. Consulte o regulamento completo no WhatsApp ou em
+          <a
+            href="https://drive.google.com/file/d/1IMkz6Axs37hsY2OqO93dnJ9YmI2vJJAi/view?usp=sharing"
+            target="_blank"
+            style="color: #e6c594; text-decoration: underline"
+            >Documento de Regulamento</a
+          >.
+        </p>
+      </div>
+
+      <!-- 15. RODAPÉ -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <img
+                src="../assets/images/logo.png"
+                alt="Logo"
+                class="footer-logo mb-20"
+              />
+              <!-- <p>Uma escolha inteligente para cuidar da saúde gastando menos.</p> -->
+              <p>Clube de benefícios em saúde.</p>
+            </div>
+            <div class="footer-col">
+              <h4>Navegação</h4>
+              <a href="#o-que-e">O Cartão</a>
+              <a href="#como-funciona">Como funciona</a>
+              <a href="#beneficios">Benefícios</a>
+              <a href="#medicos">Médicos</a>
+              <a href="#clube">Clube de Benefícios</a>
+              <a href="#planos">Planos</a>
+            </div>
+            <div class="footer-col">
+              <h4>Suporte</h4>
+              <a href="#">Central de Atendimento</a>
+              <a href="#">Dúvidas frequentes</a>
+              <p class="mt-20"><strong>Contato:</strong></p>
+              <p>Whatsapp: (35) 99984-0544</p>
+              <p>E-mail: contato@cartaonossafamilia.com.br</p>
+              <a
+                href="https://www.instagram.com/cartaonossafamilia/"
+                target="_blank"
+                >Instagram: @cartaonossafamilia</a
+              >
+            </div>
+            <div class="footer-col">
+              <h4>Institucional</h4>
+              <a href="#como-funciona">Sobre o Cartão Nossa Família</a>
+              <a href="termos.html">Termos de Uso</a>
+              <a href="privacidade.html">Política de Privacidade</a>
+              <!-- <a href="#">Regulamento</a> -->
+            </div>
+          </div>
+          <div class="footer-legal">
+            <!-- <p>O Cartão Nossa Família é um clube de benefícios em saúde e não se caracteriza como plano de saúde, seguro saúde ou convênio médico. Os benefícios, descontos, carências e condições de utilização estão sujeitos às regras de cada modalidade e aos parceiros participantes.</p> -->
+            <p>© 2026 Cartão de Benefícios • Sua saúde com economia</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts (Carrossel e FAQ) -->
+    <script>
+      // Lógica do Carrossel de Banners
+      let currentSlide = 0;
+      const track = document.getElementById("carouselTrack");
+      const dots = document.querySelectorAll(".dot");
+      const slides = document.querySelectorAll(".slide");
+
+      function updateCarousel() {
+        if (!track) return;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot) => dot.classList.remove("active"));
+        if (dots[currentSlide]) dots[currentSlide].classList.add("active");
+      }
+      function moveSlide(direction) {
+        currentSlide =
+          (currentSlide + direction + slides.length) % slides.length;
+        updateCarousel();
+      }
+      function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+      }
+      setInterval(() => {
+        moveSlide(1);
+      }, 5000);
+
+      // Lógica do FAQ (Acordeão Moderno)
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          const isActive = item.classList.contains("active");
+
+          // Fecha todos
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+
+          // Abre o clicado se não estava aberto
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
