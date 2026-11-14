@@ -15,131 +15,52 @@
     >
   </head>
   <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container header-container">
-        <!-- Logo -->
-        <a href="/natal" class="logo">
-          <img src="./assets/images/logo.png" alt="Logo Cartão Nossa Família" />
-        </a>
+    <!-- 01. HERO (Corrigida: Texto na Esquerda, Dr. Jorge na Direita) -->
+    <section class="hero">
+      <div class="container hero-container">
+        <!-- CAIXA DA ESQUERDA (TEXTOS) -->
+        <div class="hero-text" data-aos="fade-right">
+          <span class="badge">Clube de Benefícios</span>
+          <h1>
+            Cuidar da sua saúde pode custar
+            <span class="highlight">menos.</span>
+          </h1>
+          <p>
+            Com o Cartão Nossa Família, você tem acesso a consultas, exames e
+            outros benefícios em saúde por condições diferenciadas — além de
+            vantagens que continuam mesmo quando você não está no consultório.
+          </p>
 
-        <!-- Menu de Navegação -->
-        <nav class="nav-menu" id="nav-menu">
-          <!-- Links de Seção -->
-          <a href="#o-que-e" class="nav-link">O Cartão</a>
-          <a href="#como-funciona" class="nav-link">Como Funciona</a>
-          <a href="#beneficios" class="nav-link">Benefícios</a>
+          <ul class="hero-bullets">
+            <li>✔️ Até 60% de desconto em consultas</li>
+            <li>✔️ Consulta Grátis com Clínico Geral inclusa*</li>
+            <li>✔️ Descontos em exames e Clube de Benefícios</li>
+            <li>✔️ App que mostra sua economia</li>
+          </ul>
 
-          <!-- Novos Botões de Acesso (Secundários) -->
-          <a
-            href="https://cartaonossafamilia.tenex.com.br/area-cliente/login/"
-            class="btn-outline"
-            >Minhas Faturas</a
-          >
-          <a href="/catalogo/catalogo.html" class="btn-outline"
-            >Área do Associado</a
-          >
-
-          <!-- Botão Principal de Venda -->
-          <a href="#planos" class="btn-primary">Escolher Plano</a>
-        </nav>
-
-        <!-- Botão Mobile (Hambúrguer) -->
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-      </div>
-    </header>
-
-    <!-- SECÇÃO HERO PRINCIPAL -->
-    <section class="hero-oficial">
-      <!-- 1. Carrossel de Banners (Largo e mais curto) -->
-      <div class="hero-carousel">
-        <div class="carousel-track">
-          <!-- Banner 1 -->
-          <div class="slide">
-            <a
-              href="/natal/"
-              target="_blank"
-              rel="noopener"
-              style="display: block"
+          <div class="hero-actions">
+            <a href="#planos" class="btn-primary large">Quero Ter o Cartão</a>
+            <a href="#como-funciona" class="btn-outline large"
+              >Ver Como Funciona</a
             >
-              <picture>
-                <source
-                  media="(max-width: 768px)"
-                  srcset="assets/images/banner-mobile-1.jpg"
-                />
-                <img
-                  src="assets/images/banner-desktop-1.jpg"
-                  alt="Especial de Natal - Ação Premiada"
-                />
-              </picture>
-            </a>
           </div>
-          <!-- Banner 2 -->
-          <div class="slide">
-    <a href="/natal/" target="_blank" rel="noopener" style="display: block;">
-        <picture>
-            <source media="(max-width: 768px)" srcset="assets/images/banner-mobile-1.jpg">
-            <img src="assets/images/banner-desktop-1.jpg" alt="Especial de Natal - Ação Premiada">
-        </picture>
-    </a>
-</div>
-
-        <!-- Controlos do Carrossel -->
-        <button class="carousel-btn btn-prev">
-          <i class="ph ph-caret-left"></i>
-        </button>
-        <button class="carousel-btn btn-next">
-          <i class="ph ph-caret-right"></i>
-        </button>
-
-        <div class="carousel-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
+          <p class="microcopy">
+            Sem burocracia. Conheça o cartão, escolha sua modalidade e comece a
+            aproveitar.
+          </p>
+          <p class="nota-rodape">
+            *A consulta com Clínico Geral e demais benefícios estão sujeitos às
+            condições da modalidade contratada.
+          </p>
         </div>
-      </div>
 
-      <!-- 2. Cards de Acesso Rápido (Sobrepondo o banner) -->
-      <div class="hero-quick-cards">
-        <div class="container quick-cards-grid">
-          <a href="paginas/beneficios.html#saude" class="quick-card">
-            <div class="quick-card-icon icon-consultas">
-              <i class="ph ph-stethoscope"></i>
-            </div>
-            <div class="quick-card-content">
-              <h3>Saúde</h3>
-              <p>Consultas e exames com valores reduzidos.</p>
-            </div>
-          </a>
-
-          <a href="#clinicas" class="quick-card">
-            <div class="quick-card-icon icon-clinicas">
-              <i class="ph ph-first-aid"></i>
-            </div>
-            <div class="quick-card-content">
-              <h3>Clínicas</h3>
-              <p>Encontre a unidade mais próxima.</p>
-            </div>
-          </a>
-
-          <a href="paginas/beneficios.html#parceiros" class="quick-card">
-            <div class="quick-card-icon icon-parceiros">
-              <i class="ph ph-shopping-bag"></i>
-            </div>
-            <div class="quick-card-content">
-              <h3>Parceiros</h3>
-              <p>Descontos no comércio local.</p>
-            </div>
-          </a>
-
-          <a href="/portal/" class="quick-card highlight-card">
-            <div class="quick-card-icon icon-app">
-              <i class="ph ph-device-mobile"></i>
-            </div>
-            <div class="quick-card-content">
-              <h3>Área do Associado</h3>
-              <p>Acesse sua carteirinha digital.</p>
-            </div>
-          </a>
+        <!-- CAIXA DA DIREITA (IMAGEM DO DR. JORGE) -->
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+          <!-- Coloque a foto do Dr. Jorge aqui -->
+          <img
+            src="./assets/images/dr-jorge.png"
+            alt="Dr. Jorge - Garoto Propaganda Cartão Nossa Família"
+          />
         </div>
       </div>
     </section>
