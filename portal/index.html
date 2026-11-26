@@ -1,235 +1,435 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal do Parceiro - CNF</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="../style.css?v=10">
-    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
-</head>
-<body class="crm-body">
-
+    <link rel="stylesheet" href="../style.css?v=10" />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png" />
+  </head>
+  <body class="crm-body">
     <!-- TELA DE LOGIN -->
     <div id="tela-login" class="login-overlay">
-        <div class="login-box">
-            <img src="../assets/images/logo.png" alt="CNF" class="login-logo">
-            <h2>Acesso ao Portal</h2>
-            <p>Digite seu código de parceiro para acessar.</p>
-            <input type="password" id="codigo-parceiro" placeholder="Ex: LILIAN2026" class="login-input">
-            <button id="btn-entrar" class="crm-btn btn-verde" style="width: 100%; border-radius: 12px;">Entrar no Sistema</button>
-            <p id="erro-login" class="login-erro" style="display: none;">Código inválido. Tente novamente.</p>
-        </div>
+      <div class="login-box">
+        <img src="../assets/images/logo.png" alt="CNF" class="login-logo" />
+        <h2>Acesso ao Portal</h2>
+        <p>Digite seu código de parceiro para acessar.</p>
+        <input
+          type="password"
+          id="codigo-parceiro"
+          placeholder="Ex: LILIAN2026"
+          class="login-input"
+        />
+        <button
+          id="btn-entrar"
+          class="crm-btn btn-verde"
+          style="width: 100%; border-radius: 12px"
+        >
+          Entrar no Sistema
+        </button>
+        <p id="erro-login" class="login-erro" style="display: none">
+          Código inválido. Tente novamente.
+        </p>
+      </div>
     </div>
 
     <!-- SISTEMA CRM (Inicia oculto) -->
-    <div id="sistema-crm" class="crm-layout" style="display: none;">
-        
-        <aside class="crm-sidebar">
-            <div class="crm-logo-area">
-                <img src="../assets/images/logo.png" alt="CNF" class="crm-logo">
-            </div>
-            <!-- MENU COM NAVEGAÇÃO DE ABAS -->
-            <nav class="crm-menu">
-                <a href="#" class="menu-item ativo" onclick="abrirAba(event, 'aba-dashboard')">
-                    <i class="ph ph-squares-four"></i> Dashboard
-                </a>
-                <a href="#" class="menu-item" onclick="abrirAba(event, 'aba-relatorios')">
-                    <i class="ph ph-chart-line-up"></i> Relatórios
-                </a>
-                <a href="#" class="menu-item" onclick="abrirAba(event, 'aba-regras')">
-                    <i class="ph ph-shield-check"></i> Regras da Parceria
-                </a>
-                <a href="#" class="menu-item" onclick="abrirAba(event, 'aba-usuario')">
-                    <i class="ph ph-user"></i> Meu Perfil
-                </a>
-            </nav>
-            <div class="crm-sidebar-footer">
-                <a href="#" class="menu-item sair" onclick="sairSistema()">
-                    <i class="ph ph-sign-out"></i> Sair do Painel
-                </a>
-            </div>
-        </aside>
+    <div id="sistema-crm" class="crm-layout" style="display: none">
+      <aside class="crm-sidebar">
+        <div class="crm-logo-area">
+          <img src="../assets/images/logo.png" alt="CNF" class="crm-logo" />
+        </div>
+        <!-- MENU COM NAVEGAÇÃO DE ABAS -->
+        <nav class="crm-menu">
+          <a
+            href="#"
+            class="menu-item ativo"
+            onclick="abrirAba(event, 'aba-dashboard')"
+          >
+            <i class="ph ph-squares-four"></i> Dashboard
+          </a>
+          <a
+            href="#"
+            class="menu-item"
+            onclick="abrirAba(event, 'aba-relatorios')"
+          >
+            <i class="ph ph-chart-line-up"></i> Relatórios
+          </a>
+          <a href="#" class="menu-item" onclick="abrirAba(event, 'aba-regras')">
+            <i class="ph ph-shield-check"></i> Regras da Parceria
+          </a>
+          <a
+            href="#"
+            class="menu-item"
+            onclick="abrirAba(event, 'aba-usuario')"
+          >
+            <i class="ph ph-user"></i> Meu Perfil
+          </a>
+        </nav>
+        <div class="crm-sidebar-footer">
+          <a href="#" class="menu-item sair" onclick="sairSistema()">
+            <i class="ph ph-sign-out"></i> Sair do Painel
+          </a>
+        </div>
+      </aside>
 
-        <main class="crm-main">
-            <header class="crm-header">
-                <div class="header-saudacao">
-                    <h1>Olá, <strong id="nome-parceiro-header">Parceiro</strong></h1>
-                    <p>Bem-vindo ao seu painel exclusivo de gestão.</p>
+      <main class="crm-main">
+        <header class="crm-header">
+          <div class="header-saudacao">
+            <h1>Olá, <strong id="nome-parceiro-header">Parceiro</strong></h1>
+            <p>Bem-vindo ao seu painel exclusivo de gestão.</p>
+          </div>
+          <div class="header-perfil">
+            <div class="avatar"><i class="ph ph-user"></i></div>
+          </div>
+        </header>
+
+        <section class="crm-content">
+          <!-- ABA 1: DASHBOARD (Inicia Ativa) -->
+          <div id="aba-dashboard" class="conteudo-aba ativa">
+            <div class="crm-grid">
+              <!-- Cartão 1: Validar Associado (Tenex) -->
+              <div class="crm-card">
+                <div class="card-icone icone-roxo">
+                  <i class="ph ph-check-circle"></i>
                 </div>
-                <div class="header-perfil"><div class="avatar"><i class="ph ph-user"></i></div></div>
-            </header>
+                <h3>Validar Associado</h3>
+                <p>
+                  Acesse o sistema Tenex oficial para validar o cartão e aplicar
+                  o desconto.
+                </p>
+                <a
+                  href="https://cartaonossafamilia.tenex.com.br/carteira-virtual/"
+                  id="https://cartaonossafamilia.tenex.com.br/carteira-virtual/"
+                  target="_blank"
+                  class="crm-btn btn-roxo"
+                  >Acessar Sistema Tenex</a
+                >
+              </div>
 
-            <section class="crm-content">
-                
-                <!-- ABA 1: DASHBOARD (Inicia Ativa) -->
-<div id="aba-dashboard" class="conteudo-aba ativa">
-    <div class="crm-grid">
-        
-        <!-- Cartão 1: Validar Associado (Tenex) -->
-        <div class="crm-card">
-            <div class="card-icone icone-roxo"><i class="ph ph-check-circle"></i></div>
-            <h3>Validar Associado</h3>
-            <p>Acesse o sistema Tenex oficial para validar o cartão e aplicar o desconto.</p>
-            <a href="#" id="link-tenex" target="_blank" class="crm-btn btn-roxo">Acessar Sistema Tenex</a>
-        </div>
-
-        <!-- Cartão 2: Fazer uma Venda -->
-        <div class="crm-card">
-            <div class="card-icone icone-verde"><i class="ph ph-shopping-cart"></i></div>
-            <h3>Nova Venda</h3>
-            <p>Use seu link exclusivo para cadastrar um novo associado CNF.</p>
-            <a href="#" id="link-venda" target="_blank" class="crm-btn btn-verde">Vender Plano</a>
-        </div>
-
-        <!-- Cartão 3: Material de Marca -->
-        <div class="crm-card">
-            <div class="card-icone icone-azul"><i class="ph ph-image"></i></div>
-            <h3>Material de Marketing</h3>
-            <p>Acesse o Google Drive com logos, selos e posts padronizados.</p>
-            <a href="#" id="link-drive" target="_blank" class="crm-btn btn-azul">Acessar Arquivos</a>
-        </div>
-
-        <!-- Cartão 4: Central de Ajuda -->
-        <div class="crm-card">
-            <div class="card-icone" style="background: #f3f4f6; color: #111827;"><i class="ph ph-headset"></i></div>
-            <h3>Manuais e Suporte</h3>
-            <p>Baixe as diretrizes ou fale diretamente com a nossa equipa.</p>
-            <div style="display: flex; gap: 10px; flex-direction: column;">
-                <a href="#" id="link-manual" target="_blank" class="crm-btn" style="background: #111827; color: white;">Baixar Manual PDF</a>
-                <a href="#" id="link-suporte" target="_blank" class="crm-btn" style="background: #25D366; color: white;"><i class="ph ph-whatsapp-logo"></i> Falar no Suporte</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-                <!-- ABA 2: RELATÓRIOS -->
-                <div id="aba-relatorios" class="conteudo-aba" style="display: none;">
-                    <div class="crm-panel-regras">
-                        <div class="regras-header">
-                            <i class="ph ph-chart-bar" style="color: #0ea5e9;"></i>
-                            <h2>Meus Relatórios e Repasses</h2>
-                        </div>
-                        <p style="color: #6b7280; margin-bottom: 20px;">Acesse sua planilha financeira exclusiva e atualizada em tempo real.</p>
-                        <a href="#" id="link-planilha" target="_blank" class="crm-btn btn-verde" style="display: inline-block;">Visualizar Planilha de Comissões</a>
-                    </div>
+              <!-- Cartão 2: Fazer uma Venda -->
+              <div class="crm-card">
+                <div class="card-icone icone-verde">
+                  <i class="ph ph-shopping-cart"></i>
                 </div>
+                <h3>Nova Venda</h3>
+                <p>
+                  Use seu link exclusivo para cadastrar um novo associado CNF.
+                </p>
+                <a
+                  href="https://cartaonossafamilia.com.br/#planos"
+                  id="https://cartaonossafamilia.com.br/#planos"
+                  target="_blank"
+                  class="crm-btn btn-verde"
+                  >Vender Plano</a
+                >
+              </div>
 
-                <!-- ABA 3: REGRAS E COMISSÕES -->
-<div id="aba-regras" class="conteudo-aba" style="display: none;">
-    
-    <!-- Painel 1: Estrutura de Comissões -->
-    <div class="crm-panel-regras" style="margin-bottom: 25px;">
-        <div class="regras-header">
-            <i class="ph ph-money" style="color: #00C853;"></i>
-            <h2>Tabela Oficial de Comissões</h2>
-        </div>
-        <p style="color: #6b7280; margin-bottom: 20px;">A parceria permite comercializar o Cartão Nossa Família, gerando receita por adesão com ganhos escaláveis baseados em performance[cite: 2].</p>
-        
-        <div style="overflow-x: auto; margin-bottom: 20px;">
-            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
-                <tr style="background: #f9fafb; border-bottom: 2px solid #e5e7eb;">
-                    <th style="padding: 12px; color: #111827;">Plano</th>
-                    <th style="padding: 12px; color: #111827;">Valor Anual</th>
-                    <th style="padding: 12px; color: #111827;">Comissão Base (7%)</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                    <td style="padding: 12px;"><strong>Individual</strong></td>
-                    <td style="padding: 12px;">R$ 293,82[cite: 2]</td>
-                    <td style="padding: 12px; color: #00C853; font-weight: bold;">R$ 20,56[cite: 2]</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                    <td style="padding: 12px;"><strong>Compartilhado</strong></td>
-                    <td style="padding: 12px;">R$ 355,80[cite: 2]</td>
-                    <td style="padding: 12px; color: #00C853; font-weight: bold;">R$ 24,91[cite: 2]</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                    <td style="padding: 12px;"><strong>Familiar</strong></td>
-                    <td style="padding: 12px;">R$ 505,90[cite: 2]</td>
-                    <td style="padding: 12px; color: #00C853; font-weight: bold;">R$ 35,41[cite: 2]</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <!-- Painel 2: Escala e Bônus -->
-    <div class="crm-grid">
-        <div class="crm-panel-regras">
-            <div class="regras-header">
-                <i class="ph ph-trend-up" style="color: #4F46E5;"></i>
-                <h2>Escala Progressiva</h2>
-            </div>
-            <ul class="regras-lista" style="font-size: 0.9rem;">
-                <li><i class="ph ph-caret-right"></i><span><strong>1 a 19 vendas:</strong> 7% de comissão[cite: 2]</span></li>
-                <li><i class="ph ph-caret-right"></i><span><strong>20 a 49 vendas:</strong> 8% de comissão[cite: 2]</span></li>
-                <li><i class="ph ph-caret-right"></i><span><strong>50 a 99 vendas:</strong> 9% de comissão[cite: 2]</span></li>
-                <li><i class="ph ph-caret-right"></i><span><strong>100 a 149 vendas:</strong> 10% de comissão[cite: 2]</span></li>
-                <li><i class="ph ph-caret-right"></i><span><strong>150+ vendas:</strong> 12% de comissão[cite: 2]</span></li>
-            </ul>
-        </div>
-        
-        <div class="crm-panel-regras">
-            <div class="regras-header">
-                <i class="ph ph-star" style="color: #f59e0b;"></i>
-                <h2>Bônus por Meta (Mensal)</h2>
-            </div>
-            <ul class="regras-lista" style="font-size: 0.9rem;">
-                <li><i class="ph ph-gift"></i><span><strong>20 vendas:</strong> + R$ 100,00[cite: 3]</span></li>
-                <li><i class="ph ph-gift"></i><span><strong>50 vendas:</strong> + R$ 300,00[cite: 3]</span></li>
-                <li><i class="ph ph-gift"></i><span><strong>100 vendas:</strong> + R$ 800,00[cite: 3]</span></li>
-                <li><i class="ph ph-gift"></i><span><strong>150 vendas:</strong> + R$ 1.500,00[cite: 3]</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Painel 3: Diretrizes Operacionais -->
-    <div class="crm-panel-regras" style="margin-top: 25px;">
-        <div class="regras-header">
-            <i class="ph ph-shield-check" style="color: #111827;"></i>
-            <h2>Regras Operacionais e Validação</h2>
-        </div>
-        <ul class="regras-lista">
-            <li>
-                <i class="ph ph-check-circle"></i>
-                <span><strong>Critério de Pagamento:</strong> A comissão é válida apenas para vendas pagas, confirmadas e sem cancelamento dentro do prazo de garantia[cite: 3].</span>
-            </li>
-            <li>
-                <i class="ph ph-clock"></i>
-                <span><strong>Prazo de Validação:</strong> A validação ocorre em até 7 dias úteis após a confirmação do pagamento.</span>
-            </li>
-            <li>
-                <i class="ph ph-magnifying-glass"></i>
-                <span><strong>Auditoria:</strong> A Clínica Nossa Família reserva-se o direito de revisar cadastros, gravações, comprovantes e históricos comerciais a qualquer momento[cite: 4].</span>
-            </li>
-            <li>
-                <i class="ph ph-megaphone"></i>
-                <span><strong>Material e Marca:</strong> Toda comunicação deve seguir o manual oficial. O parceiro tem acesso a script de vendas, link rastreável, QR Code exclusivo e selo "Parceiro Oficial"[cite: 4]. Lembre-se: "Família cuidando de família"[cite: 4].</span>
-            </li>
-        </ul>
-    </div>
-</div>
-
-                <!-- ABA 4: USUÁRIO -->
-                <div id="aba-usuario" class="conteudo-aba" style="display: none;">
-                    <div class="crm-panel-regras">
-                        <div class="regras-header">
-                            <i class="ph ph-identification-badge" style="color: #111827;"></i>
-                            <h2>Dados do Parceiro</h2>
-                        </div>
-                        <ul class="regras-lista">
-                            <li><strong>Empresa Cadastrada:</strong> <span id="perfil-nome">Carregando...</span></li>
-                            <li><strong>Status da Parceria:</strong> <span style="color: #00C853; font-weight: bold;">Ativa</span></li>
-                        </ul>
-                        <br>
-                        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="crm-btn" style="background: #111827; color: #fff;">Falar com Suporte CNF</a>
-                    </div>
+              <!-- Cartão 3: Material de Marca -->
+              <div class="crm-card">
+                <div class="card-icone icone-azul">
+                  <i class="ph ph-image"></i>
                 </div>
+                <h3>Material de Marketing</h3>
+                <p>
+                  Acesse o Google Drive com logos, selos e posts padronizados.
+                </p>
+                <a
+                  href="https://drive.google.com/drive/folders/1CtMTUP8Rm4sWyy0CTRSFzyU3_b-tby9d?usp=sharing"
+                  id="https://drive.google.com/drive/folders/1CtMTUP8Rm4sWyy0CTRSFzyU3_b-tby9d?usp=sharing"
+                  target="_blank"
+                  class="crm-btn btn-azul"
+                  >Acessar Arquivos</a
+                >
+              </div>
 
-            </section>
-        </main>
+              <!-- Cartão 4: Central de Ajuda -->
+              <div class="crm-card">
+                <div
+                  class="card-icone"
+                  style="background: #f3f4f6; color: #111827"
+                >
+                  <i class="ph ph-headset"></i>
+                </div>
+                <h3>Manuais e Suporte</h3>
+                <p>
+                  Baixe as diretrizes ou fale diretamente com a nossa equipe.
+                </p>
+                <div style="display: flex; gap: 10px; flex-direction: column">
+                  <a
+                    href="https://drive.google.com/file/d/1YTqqgtS8vTagoTYAzfZf2A4BaqsLNFmG/view?usp=sharing"
+                    id="https://drive.google.com/file/d/1YTqqgtS8vTagoTYAzfZf2A4BaqsLNFmG/view?usp=sharing"
+                    target="_blank"
+                    class="crm-btn"
+                    style="background: #111827; color: white"
+                    >Baixar Manual PDF</a
+                  >
+                  <a
+                    href="https://wa.me/553599840544"
+                    id="https://wa.me/553599840544"
+                    target="_blank"
+                    class="crm-btn"
+                    style="background: #25d366; color: white"
+                    ><i class="ph ph-whatsapp-logo"></i> Falar no Suporte</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ABA 2: RELATÓRIOS -->
+          <div id="aba-relatorios" class="conteudo-aba" style="display: none">
+            <div class="crm-panel-regras">
+              <div class="regras-header">
+                <i class="ph ph-chart-bar" style="color: #0ea5e9"></i>
+                <h2>Meus Relatórios e Repasses</h2>
+              </div>
+              <p style="color: #6b7280; margin-bottom: 20px">
+                Acesse sua planilha financeira exclusiva e atualizada em tempo
+                real.
+              </p>
+              <a
+                href="#"
+                id="link-planilha"
+                target="_blank"
+                class="crm-btn btn-verde"
+                style="display: inline-block"
+                >Visualizar Planilha de Comissões</a
+              >
+            </div>
+          </div>
+
+          <!-- ABA 3: REGRAS E COMISSÕES -->
+          <div id="aba-regras" class="conteudo-aba" style="display: none">
+            <!-- Painel 1: Estrutura de Comissões -->
+            <div class="crm-panel-regras" style="margin-bottom: 25px">
+              <div class="regras-header">
+                <i class="ph ph-money" style="color: #00c853"></i>
+                <h2>Tabela Oficial de Comissões</h2>
+              </div>
+              <p style="color: #6b7280; margin-bottom: 20px">
+                A parceria permite comercializar o Cartão Nossa Família, gerando
+                receita por adesão com ganhos escaláveis baseados em
+                performance[cite: 2].
+              </p>
+
+              <div style="overflow-x: auto; margin-bottom: 20px">
+                <table
+                  style="
+                    width: 100%;
+                    border-collapse: collapse;
+                    text-align: left;
+                    font-size: 0.95rem;
+                  "
+                >
+                  <tr
+                    style="
+                      background: #f9fafb;
+                      border-bottom: 2px solid #e5e7eb;
+                    "
+                  >
+                    <th style="padding: 12px; color: #111827">Plano</th>
+                    <th style="padding: 12px; color: #111827">Valor Anual</th>
+                    <th style="padding: 12px; color: #111827">
+                      Comissão Base (7%)
+                    </th>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #e5e7eb">
+                    <td style="padding: 12px"><strong>Individual</strong></td>
+                    <td style="padding: 12px">R$ 293,82[cite: 2]</td>
+                    <td
+                      style="padding: 12px; color: #00c853; font-weight: bold"
+                    >
+                      R$ 20,56[cite: 2]
+                    </td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #e5e7eb">
+                    <td style="padding: 12px">
+                      <strong>Compartilhado</strong>
+                    </td>
+                    <td style="padding: 12px">R$ 355,80[cite: 2]</td>
+                    <td
+                      style="padding: 12px; color: #00c853; font-weight: bold"
+                    >
+                      R$ 24,91[cite: 2]
+                    </td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #e5e7eb">
+                    <td style="padding: 12px"><strong>Familiar</strong></td>
+                    <td style="padding: 12px">R$ 505,90[cite: 2]</td>
+                    <td
+                      style="padding: 12px; color: #00c853; font-weight: bold"
+                    >
+                      R$ 35,41[cite: 2]
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- Painel 2: Escala e Bônus -->
+            <div class="crm-grid">
+              <div class="crm-panel-regras">
+                <div class="regras-header">
+                  <i class="ph ph-trend-up" style="color: #4f46e5"></i>
+                  <h2>Escala Progressiva</h2>
+                </div>
+                <ul class="regras-lista" style="font-size: 0.9rem">
+                  <li>
+                    <i class="ph ph-caret-right"></i
+                    ><span
+                      ><strong>1 a 19 vendas:</strong> 7% de comissão[cite:
+                      2]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-caret-right"></i
+                    ><span
+                      ><strong>20 a 49 vendas:</strong> 8% de comissão[cite:
+                      2]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-caret-right"></i
+                    ><span
+                      ><strong>50 a 99 vendas:</strong> 9% de comissão[cite:
+                      2]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-caret-right"></i
+                    ><span
+                      ><strong>100 a 149 vendas:</strong> 10% de comissão[cite:
+                      2]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-caret-right"></i
+                    ><span
+                      ><strong>150+ vendas:</strong> 12% de comissão[cite:
+                      2]</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="crm-panel-regras">
+                <div class="regras-header">
+                  <i class="ph ph-star" style="color: #f59e0b"></i>
+                  <h2>Bônus por Meta (Mensal)</h2>
+                </div>
+                <ul class="regras-lista" style="font-size: 0.9rem">
+                  <li>
+                    <i class="ph ph-gift"></i
+                    ><span
+                      ><strong>20 vendas:</strong> + R$ 100,00[cite: 3]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-gift"></i
+                    ><span
+                      ><strong>50 vendas:</strong> + R$ 300,00[cite: 3]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-gift"></i
+                    ><span
+                      ><strong>100 vendas:</strong> + R$ 800,00[cite: 3]</span
+                    >
+                  </li>
+                  <li>
+                    <i class="ph ph-gift"></i
+                    ><span
+                      ><strong>150 vendas:</strong> + R$ 1.500,00[cite: 3]</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Painel 3: Diretrizes Operacionais -->
+            <div class="crm-panel-regras" style="margin-top: 25px">
+              <div class="regras-header">
+                <i class="ph ph-shield-check" style="color: #111827"></i>
+                <h2>Regras Operacionais e Validação</h2>
+              </div>
+              <ul class="regras-lista">
+                <li>
+                  <i class="ph ph-check-circle"></i>
+                  <span
+                    ><strong>Critério de Pagamento:</strong> A comissão é válida
+                    apenas para vendas pagas, confirmadas e sem cancelamento
+                    dentro do prazo de garantia[cite: 3].</span
+                  >
+                </li>
+                <li>
+                  <i class="ph ph-clock"></i>
+                  <span
+                    ><strong>Prazo de Validação:</strong> A validação ocorre em
+                    até 7 dias úteis após a confirmação do pagamento.</span
+                  >
+                </li>
+                <li>
+                  <i class="ph ph-magnifying-glass"></i>
+                  <span
+                    ><strong>Auditoria:</strong> A Clínica Nossa Família
+                    reserva-se o direito de revisar cadastros, gravações,
+                    comprovantes e históricos comerciais a qualquer
+                    momento[cite: 4].</span
+                  >
+                </li>
+                <li>
+                  <i class="ph ph-megaphone"></i>
+                  <span
+                    ><strong>Material e Marca:</strong> Toda comunicação deve
+                    seguir o manual oficial. O parceiro tem acesso a script de
+                    vendas, link rastreável, QR Code exclusivo e selo "Parceiro
+                    Oficial"[cite: 4]. Lembre-se: "Família cuidando de
+                    família"[cite: 4].</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ABA 4: USUÁRIO -->
+          <div id="aba-usuario" class="conteudo-aba" style="display: none">
+            <div class="crm-panel-regras">
+              <div class="regras-header">
+                <i
+                  class="ph ph-identification-badge"
+                  style="color: #111827"
+                ></i>
+                <h2>Dados do Parceiro</h2>
+              </div>
+              <ul class="regras-lista">
+                <li>
+                  <strong>Empresa Cadastrada:</strong>
+                  <span id="perfil-nome">Carregando...</span>
+                </li>
+                <li>
+                  <strong>Status da Parceria:</strong>
+                  <span style="color: #00c853; font-weight: bold">Ativa</span>
+                </li>
+              </ul>
+              <br />
+              <a
+                href="https://wa.me/55SEUNUMERO"
+                target="_blank"
+                class="crm-btn"
+                style="background: #111827; color: #fff"
+                >Falar com Suporte CNF</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script src="portal.js?v=9"></script>
-</body>
+  </body>
 </html>
